@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+        <boby>
+            <div id="root"></div>
+            <script type="text/babel">
+                class GuGuDan extends React.Component{
+                    constructor(props){
+                        super(props);
+                        this.state={
+
+                         first:Math.ceil(Math.random()*9),
+                         second:Math.ceil(Math.random()*9),//임의의 아무 숫자 출력
+                        value: '', //입력창
+                        result: ''//결과 값
+                        };// 바뀌는 것들
+                    }
+           render(){
+             return (
+                        <div>
+                            <div>{this.state.first}곱하기{this.state.second}는?</div> 
+                        <form>
+                            <input type="number" value={this.state.value} onChange={(e) => this.setState({value: e.target.value})}/> 
+                            <button> 입력</button>
+                         </form>
+                         <div>{this.state.result} </div>
+                               
+                        </div>
+                        );
+                    }
+                }
+             ReactDOM.render(<GuGuDan />,document.querySelector('#root'));
+            
+            
+            </script>
+        </boby>
+    </head>
+</html>
